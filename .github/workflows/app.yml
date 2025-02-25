@@ -16,8 +16,12 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
-        cache: 'npm'
+        node-version: '15.14.0'
+        
+    - name: Install specific npm version
+      run: |
+        npm install -g npm@7.24.2
+        npm --version
         
     - name: Install dependencies
       run: npm install
